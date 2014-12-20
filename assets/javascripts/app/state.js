@@ -1,7 +1,5 @@
 define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
 	'use strict';
-	// Set up socket connection to server
-	var socket = io.connect('/socket/v1');
 
 	// Create state object (singleton)
 	var state = {

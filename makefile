@@ -41,7 +41,14 @@ dist:
 	@$(build) -om
 	rm -Rf dist
 	cp -R public dist
-	cp views/index-optimize.html dist/index.html
+	#cp views/index-optimize.html dist/index.html
+
+deploy: dist
+	@echo "[x] Pushing application to heroku..."
+	git add -A
+	git commit -m "Optimized build"
+	git push origin master
+	git push heroku master
 
 distribute:
 	@echo "[x] Building and distributing application..."
