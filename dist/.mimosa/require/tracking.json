@@ -62,6 +62,14 @@
       "knockout",
       "state"
     ],
+    "/javascripts/app/viewmodels/prefix.js": [
+      "bootstrap-tabs",
+      "jquery-base64",
+      "rdfstore",
+      "underscore",
+      "knockout",
+      "state"
+    ],
     "/javascripts/app/viewmodels/shell.js": [
       "plugins/router",
       "durandal/app"
