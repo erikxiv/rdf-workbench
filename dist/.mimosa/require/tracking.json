@@ -81,6 +81,11 @@
       "underscore",
       "knockout",
       "state"
+    ],
+    "/javascripts/app/viewmodels/table.js": [
+      "underscore",
+      "knockout",
+      "state"
     ]
   },
   "aliases": {
