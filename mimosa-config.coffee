@@ -1,20 +1,20 @@
 exports.config =
-  minMimosaVersion:'2.0.0'
+
+  # 0.14.12 is needed for optimization to work properly
+  minMimosaVersion:'0.14.12'
 
   modules: [
+    'copy'
+    'lint'
     'server'
     'require'
-    'minify-js'
-    'minify-css'
+    'minify'
     'live-reload'
     'combine'
+    'bower'
+    'web-package'
     'requirebuild-include'
     'requirebuild-textplugin-include'
-    'bower'
-    'csslint'
-    'jshint'
-    'copy'
-    'web-package'
   ]
 
   watch:
@@ -66,10 +66,10 @@ exports.config =
     ]
 
   server:
-    path: 'server.js'
+    path: "server.js"
     views:
-      compileWith: 'html'
-      extension: 'html'
+      compileWith: 'handlebars'
+      extension: 'hbs'
 
   require:
     optimize:

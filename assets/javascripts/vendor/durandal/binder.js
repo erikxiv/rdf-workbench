@@ -1,5 +1,5 @@
 /**
- * Durandal 2.1.0 Copyright (c) 2012 Blue Spire Consulting, Inc. All Rights Reserved.
+ * Durandal 2.0.0 Copyright (c) 2012 Blue Spire Consulting, Inc. All Rights Reserved.
  * Available via the MIT license.
  * see: http://durandaljs.com or https://github.com/BlueSpire/Durandal for details.
  */
@@ -130,11 +130,10 @@ define(['durandal/system', 'knockout'], function (system, ko) {
          * @param {KnockoutBindingContext} bindingContext The current binding context.
          * @param {DOMElement} view The view to bind.
          * @param {object} [obj] The data to bind to, causing the creation of a child binding context if present.
-         * @param {string} [dataAlias] An alias for $data if present.
          */
-        bindContext: function(bindingContext, view, obj, dataAlias) {
+        bindContext: function(bindingContext, view, obj) {
             if (obj && bindingContext) {
-                bindingContext = bindingContext.createChildContext(obj, typeof(dataAlias) === 'string' ? dataAlias : null);
+                bindingContext = bindingContext.createChildContext(obj);
             }
 
             return doBind(obj, view, bindingContext, obj || (bindingContext ? bindingContext.$data : null));

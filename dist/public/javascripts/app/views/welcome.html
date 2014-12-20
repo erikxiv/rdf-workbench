@@ -1,0 +1,21 @@
+﻿<section>
+    <h2>Available tools</h2>
+    <ul data-bind="foreach: router.navigationModel">
+        <!-- ko if: hash != '#' -->
+        <li data-bind="css: { active: isActive }">
+            <a data-bind="attr: { href: hash }, html: title"></a>
+        </li>
+        <!-- /ko -->
+    </ul>
+    <h2>Credits</h2>
+    <ul>
+        <li>Durandal</li>
+        <li>Mimosa</li>
+        <li>Bower</li>
+        <li>JQuery</li>
+        <li>Twitter Boostrap</li>
+        <li>Knockout</li>
+        <li>RequireJS</li>
+        <li>jquery-base64</li>
+    </ul>
+</section>

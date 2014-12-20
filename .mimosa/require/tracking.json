@@ -1,7 +1,24 @@
 {
   "shims": {
     "/javascripts/app/main.js": {
+      "rdfstore": {
+        "deps": [],
+        "exports": "rdfstore"
+      },
       "bootstrap": {
+        "deps": [
+          "jquery"
+        ],
+        "exports": "jQuery"
+      },
+      "bootstrap-tabs": {
+        "deps": [
+          "jquery",
+          "bootstrap"
+        ],
+        "exports": "jQuery"
+      },
+      "jquery-base64": {
         "deps": [
           "jquery"
         ],
@@ -16,25 +33,60 @@
       "durandal/viewLocator",
       "durandal/system"
     ],
-    "/javascripts/app/viewmodels/flickr.js": [
-      "plugins/http",
-      "durandal/app",
-      "knockout"
+    "/javascripts/app/state.js": [
+      "knockout",
+      "underscore",
+      "rdfstore"
+    ],
+    "/javascripts/app/viewmodels/export.js": [
+      "bootstrap-tabs",
+      "jquery-base64",
+      "rdfstore",
+      "underscore",
+      "knockout",
+      "state"
+    ],
+    "/javascripts/app/viewmodels/import.js": [
+      "bootstrap-tabs",
+      "jquery-base64",
+      "rdfstore",
+      "underscore",
+      "knockout",
+      "state"
+    ],
+    "/javascripts/app/viewmodels/list.js": [
+      "bootstrap-tabs",
+      "jquery-base64",
+      "rdfstore",
+      "underscore",
+      "knockout",
+      "state"
     ],
     "/javascripts/app/viewmodels/shell.js": [
       "plugins/router",
       "durandal/app"
     ],
-    "/javascripts/app/viewmodels/welcome.js": []
+    "/javascripts/app/viewmodels/sparql.js": [
+      "bootstrap-tabs",
+      "jquery-base64",
+      "rdfstore",
+      "underscore",
+      "knockout",
+      "state"
+    ]
   },
   "aliases": {
     "/javascripts/app/main.js": {
       "text": "../vendor/requirejs-text/text",
-      "knockout": "../vendor/knockout.js/knockout-3.1.0",
+      "jquery-base64": "../vendor/jquery-base64/jquery.base64",
+      "knockout": "../vendor/knockout.js/knockout",
       "jquery": "../vendor/jquery/jquery",
       "bootstrap": "../vendor/bootstrap/bootstrap",
+      "bootstrap-tabs": "../vendor/bootstrap/bootstrap-tabs",
       "durandal": "../vendor/durandal",
       "plugins": "../vendor/durandal/plugins",
+      "rdfstore": "../vendor/rdfstore/rdf_store_min",
+      "underscore": "../vendor/underscore/underscore",
       "transitions": "../vendor/durandal/transitions"
     }
   },
@@ -51,16 +103,37 @@
           "jquery"
         ],
         "exports": "jQuery"
+      },
+      "bootstrap-tabs": {
+        "deps": [
+          "jquery",
+          "bootstrap"
+        ],
+        "exports": "jQuery"
+      },
+      "jquery-base64": {
+        "deps": [
+          "jquery"
+        ],
+        "exports": "jQuery"
+      },
+      "rdfstore": {
+        "deps": [],
+        "exports": "rdfstore"
       }
     },
     "paths": {
       "text": "../vendor/requirejs-text/text",
-      "knockout": "../vendor/knockout.js/knockout-3.1.0",
+      "jquery-base64": "../vendor/jquery-base64/jquery.base64",
+      "knockout": "../vendor/knockout.js/knockout",
       "jquery": "../vendor/jquery/jquery",
       "bootstrap": "../vendor/bootstrap/bootstrap",
+      "bootstrap-tabs": "../vendor/bootstrap/bootstrap-tabs",
       "durandal": "../vendor/durandal",
       "plugins": "../vendor/durandal/plugins",
-      "transitions": "../vendor/durandal/transitions"
+      "transitions": "../vendor/durandal/transitions",
+      "rdfstore": "../vendor/rdfstore/rdf_store_min",
+      "underscore": "../vendor/underscore/underscore"
     }
   },
   "requireFiles": [

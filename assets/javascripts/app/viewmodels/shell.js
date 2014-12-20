@@ -8,8 +8,11 @@
         },
         activate: function () {
             router.map([
-                { route: '', title:'Welcome', moduleId: 'viewmodels/welcome', nav: true },
-                { route: 'flickr', moduleId: 'viewmodels/flickr', nav: true }
+                { route: '', title:'Import', moduleId: 'viewmodels/import', nav: false },
+                { route: 'import', title:'Import', moduleId: 'viewmodels/import', nav: true },
+                { route: 'export', title:'Export', moduleId: 'viewmodels/export', nav: true },
+                { route: 'sparql', title:'SPARQL', moduleId: 'viewmodels/sparql', nav: true },
+                { route: 'list', title:'List', moduleId: 'viewmodels/list', nav: true },
             ]).buildNavigationModel();
             
             return router.activate();

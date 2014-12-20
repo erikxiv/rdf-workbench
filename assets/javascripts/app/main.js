@@ -1,15 +1,31 @@
 requirejs.config({
     paths: {
         'text': '../vendor/requirejs-text/text',
-        'knockout': '../vendor/knockout.js/knockout-3.1.0',
+        'jquery-base64': '../vendor/jquery-base64/jquery.base64',
+        'knockout': '../vendor/knockout.js/knockout',
         'jquery': '../vendor/jquery/jquery',
         'bootstrap': '../vendor/bootstrap/bootstrap',
+        'bootstrap-tabs': '../vendor/bootstrap/bootstrap-tabs',
         'durandal':'../vendor/durandal',
         'plugins' : '../vendor/durandal/plugins',
+        'rdfstore' : '../vendor/rdfstore/rdf_store_min',
+        'underscore' : '../vendor/underscore/underscore',
         'transitions' : '../vendor/durandal/transitions'
     },
     shim: {
+        'rdfstore': {
+            deps: [],
+            exports: 'rdfstore'
+        },
         'bootstrap': {
+            deps: ['jquery'],
+            exports: 'jQuery'
+        },
+        'bootstrap-tabs': {
+            deps: ['jquery', 'bootstrap'],
+            exports: 'jQuery'
+        },
+        'jquery-base64': {
             deps: ['jquery'],
             exports: 'jQuery'
         }
@@ -25,11 +41,12 @@ define(function(require) {
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = 'RDF Workbench';
 
     app.configurePlugins({
         router:true,
-        dialog: true
+        dialog: true,
+        widget: true
     });
 
     app.start().then(function() {

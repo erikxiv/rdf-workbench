@@ -1,4 +1,3 @@
-rdf-workbench
-=============
+# RDF Workbench
 
-Single-page app to manipulate RDF graphs on client-side
+Single page app to manipulate RDF
