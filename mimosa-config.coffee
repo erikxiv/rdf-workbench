@@ -32,11 +32,11 @@ exports.config =
     copy:
       mainOverrides:
         "knockout.js":["knockout.js","knockout-2.3.0.debug.js"]
-        "bootstrap": [
-          "docs/assets/js/bootstrap.js"
-          "docs/assets/css/bootstrap.css"
-          "docs/assets/css/bootstrap-responsive.css"
-        ]
+        # "bootstrap": [
+        #   "docs/assets/js/bootstrap.js"
+        #   "docs/assets/css/bootstrap.css"
+        #   "docs/assets/css/bootstrap-responsive.css"
+        # ]
         "font-awesome": [
           { font: "../../font" }
           "css/font-awesome.css"

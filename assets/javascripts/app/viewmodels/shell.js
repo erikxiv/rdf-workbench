@@ -1,4 +1,4 @@
-define(['plugins/router', 'durandal/app'], function (router, app) {
+define(['bootstrap', 'plugins/router', 'durandal/app'], function (bootstrap, router, app) {
   return {
     router: router,
     search: function() {

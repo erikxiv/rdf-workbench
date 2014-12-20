@@ -1,4 +1,4 @@
-define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout', 'state'], function (jq1, jq2, rdfstore, _, ko, state) {
+define(['underscore', 'knockout', 'state'], function (_, ko, state) {
   // var store = rdfstore.create();
   state.setPrefix('ecoi', 'urn:eco:20140101:import:');
   var sebFormat = {

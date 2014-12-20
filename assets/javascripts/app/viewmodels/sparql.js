@@ -1,4 +1,4 @@
-define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout', 'state'], function (jq1, jq2, rdfstore, _, ko, state) {
+define(['underscore', 'knockout', 'state'], function (_, ko, state) {
   function testImport(csv) {
     console.log("testImport start: " + csv);
     // Create a result graph

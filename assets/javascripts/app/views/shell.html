@@ -1,27 +1,27 @@
 ﻿<div>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" data-bind="attr: { href: router.navigationModel()[0].hash }">
-                    <span>RDF Workbench</span>
-                </a>
-                <ul class="nav" data-bind="foreach: router.navigationModel">
-                    <!-- ko if: hash != '#' -->
-                    <li data-bind="css: { active: isActive }">
-                        <a data-bind="attr: { href: hash }, html: title"></a>
-                    </li>
-                    <!-- /ko -->
-                </ul>
-                <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
-                    <i class="icon-spinner icon-2x icon-spin"></i>
-                </div>
-    <!--             <form class="navbar-search pull-right" data-bind="submit:search">
-                    <input type="text" class="search-query" placeholder="Search">
-                </form>
-     -->
-            </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" data-bind="attr: { href: router.navigationModel()[0].hash }">RDF Workbench</a>
         </div>
-    </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
+            <li data-bind="css: { active: isActive }">
+                <a data-bind="attr: { href: hash }, html: title"></a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
     
     <div class="container page-host" data-bind="router: { transition:'entrance', cacheViews:true }"></div>
 </div>

@@ -11,13 +11,6 @@
         ],
         "exports": "jQuery"
       },
-      "bootstrap-tabs": {
-        "deps": [
-          "jquery",
-          "bootstrap"
-        ],
-        "exports": "jQuery"
-      },
       "jquery-base64": {
         "deps": [
           "jquery"
@@ -39,45 +32,31 @@
       "rdfstore"
     ],
     "/javascripts/app/viewmodels/export.js": [
-      "bootstrap-tabs",
-      "jquery-base64",
-      "rdfstore",
       "underscore",
       "knockout",
       "state"
     ],
     "/javascripts/app/viewmodels/import.js": [
-      "bootstrap-tabs",
-      "jquery-base64",
-      "rdfstore",
       "underscore",
       "knockout",
       "state"
     ],
     "/javascripts/app/viewmodels/list.js": [
-      "bootstrap-tabs",
-      "jquery-base64",
-      "rdfstore",
       "underscore",
       "knockout",
       "state"
     ],
     "/javascripts/app/viewmodels/prefix.js": [
-      "bootstrap-tabs",
-      "jquery-base64",
-      "rdfstore",
       "underscore",
       "knockout",
       "state"
     ],
     "/javascripts/app/viewmodels/shell.js": [
+      "bootstrap",
       "plugins/router",
       "durandal/app"
     ],
     "/javascripts/app/viewmodels/sparql.js": [
-      "bootstrap-tabs",
-      "jquery-base64",
-      "rdfstore",
       "underscore",
       "knockout",
       "state"
@@ -95,7 +74,6 @@
       "knockout": "../vendor/knockout.js/knockout",
       "jquery": "../vendor/jquery/jquery",
       "bootstrap": "../vendor/bootstrap/bootstrap",
-      "bootstrap-tabs": "../vendor/bootstrap/bootstrap-tabs",
       "durandal": "../vendor/durandal",
       "plugins": "../vendor/durandal/plugins",
       "rdfstore": "../vendor/rdfstore/rdf_store_min",

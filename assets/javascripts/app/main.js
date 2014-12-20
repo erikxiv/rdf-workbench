@@ -5,7 +5,6 @@ requirejs.config({
     'knockout': '../vendor/knockout.js/knockout',
     'jquery': '../vendor/jquery/jquery',
     'bootstrap': '../vendor/bootstrap/bootstrap',
-    'bootstrap-tabs': '../vendor/bootstrap/bootstrap-tabs',
     'durandal':'../vendor/durandal',
     'plugins' : '../vendor/durandal/plugins',
     'rdfstore' : '../vendor/rdfstore/rdf_store_min',
@@ -19,10 +18,6 @@ requirejs.config({
     },
     'bootstrap': {
       deps: ['jquery'],
-      exports: 'jQuery'
-    },
-    'bootstrap-tabs': {
-      deps: ['jquery', 'bootstrap'],
       exports: 'jQuery'
     },
     'jquery-base64': {
