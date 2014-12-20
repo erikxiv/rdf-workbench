@@ -23,7 +23,7 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
     if (resolvePrefix(prefix))
       removePrefix(prefix);
     _store.rdf.setPrefix(prefix, namespace);
-    _store.registerDefaultNamespace(namespace, prefix);
+    _store.registerDefaultNamespace(prefix, namespace);
     _prefixes.push({prefix: prefix, namespace: namespace});
     sortPrefixes();
   }

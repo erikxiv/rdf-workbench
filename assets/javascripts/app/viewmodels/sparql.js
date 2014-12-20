@@ -88,6 +88,7 @@ INSERT DATA\n\
 }");
       });
       $('#button_sparql').click(function (e) {
+        console.log(state.getPrefixesForSparql() + $("#textarea_sparql").val());
         state.store.execute(
           state.getPrefixesForSparql() + $("#textarea_sparql").val(), 
                 function(success, graph){
