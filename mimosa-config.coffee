@@ -65,6 +65,9 @@ exports.config =
       }
     ]
 
+  jshint:
+    jshintrc: ".jshintrc"
+
   server:
     path: "server.js"
     views:
@@ -80,6 +83,3 @@ exports.config =
         pragmas:
           build: true
 
-  jshint:
-    rules:
-      multistr: false

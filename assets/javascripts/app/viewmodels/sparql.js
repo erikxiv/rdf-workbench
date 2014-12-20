@@ -60,13 +60,13 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
 
         //console.log(g.toNT());
         console.log("Store triples: ", g.toArray().length);
-      })
+      });
     });
 
     //console.log("RDF: " + graph.toNT());
     console.log("Graph triples: ", graph.toArray().length);
     console.log("testImport end");
-  };
+  }
     return {
         displayName: 'SPARQL',
         state: state,

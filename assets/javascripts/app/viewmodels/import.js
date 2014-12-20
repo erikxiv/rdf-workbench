@@ -4,7 +4,7 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
   var sebFormat = {
     prefix: 'seb',
     namespace: 'urn:eco:banks:seb:20140101:',
-    uniqueFunction: function(columns) { return 'urn:_:verification:seb:' + columns[2] },
+    uniqueFunction: function(columns) { return 'urn:_:verification:seb:' + columns[2]; },
     columns : [
       { title: 'Bokföringsdatum', predicate: 'seb:bokforingsdatum', datatype: 'xsd:date' },
       { title: 'Valutadatum', predicate: 'seb:valutadatum', datatype: 'xsd:date' },
@@ -80,13 +80,13 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
 
         //console.log(g.toNT());
         console.log("Store triples: ", g.toArray().length);
-      })
+      });
     });
 
     //console.log("RDF: " + graph.toNT());
     console.log("Graph triples: ", graph.toArray().length);
     console.log("testImport end");
-  };
+  }
     return {
         displayName: 'Import',
         state: state,

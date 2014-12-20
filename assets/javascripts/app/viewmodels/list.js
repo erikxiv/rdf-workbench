@@ -31,7 +31,7 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
           console.log(triples.length+" triples have been deleted");  
           reload();
         }
-      }
+      };
 
       state.store.subscribe(null,"http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "urn:eco:20140101:verification",null,cb);
       reload();
@@ -40,5 +40,5 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
           // Make ko available to console (TODO: Remove)
           window.context = this;
     }
-  }
+  };
 });
