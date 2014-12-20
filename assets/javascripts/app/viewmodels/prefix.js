@@ -11,6 +11,7 @@ define(['underscore', 'knockout', 'state'], function (_, ko, state) {
       { title: "Prefix", sortKey: "prefix" },
       { title: "Namespace", sortKey: "namespace" }
     ],
+    defaultPrefix: state.defaultPrefix,
     prefixes: state.prefixes,
     prefix: ko.observable("newprefix"),
     namespace: ko.observable("newnamespace"),

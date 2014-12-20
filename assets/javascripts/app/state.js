@@ -3,9 +3,12 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
 
   var _store = rdfstore.create();
   var _prefixes = ko.observableArray();
+  var _defaultPrefix = ko.observable('urn:x-default:');
 
   // Initialize prefix map
   _store.rdf.setPrefix('seb', 'urn:eco:banks:seb:20140101:');
+  _store.registerDefaultProfileNamespaces();
+  _store.setDefaultPrefix(_defaultPrefix());
   _prefixes($.map(
     _store.rdf.prefixes.values(), 
     function(value, index) {
@@ -20,6 +23,7 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
     if (resolvePrefix(prefix))
       removePrefix(prefix);
     _store.rdf.setPrefix(prefix, namespace);
+    _store.registerDefaultNamespace(namespace, prefix);
     _prefixes.push({prefix: prefix, namespace: namespace});
     sortPrefixes();
   }
@@ -54,6 +58,7 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
   // Create state object (singleton)
   var state = {
     store: _store,
+    defaultPrefix: _defaultPrefix,
     prefixes: _prefixes,
     setPrefix: setPrefix,
     resolvePrefix: resolvePrefix,
