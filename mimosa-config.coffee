@@ -14,6 +14,7 @@ exports.config =
     'csslint'
     'jshint'
     'copy'
+    'web-package'
   ]
 
   watch:
