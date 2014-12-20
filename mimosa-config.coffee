@@ -80,6 +80,6 @@ exports.config =
         pragmas:
           build: true
 
-  lint:
+  jshint:
     rules:
       multistr: false
