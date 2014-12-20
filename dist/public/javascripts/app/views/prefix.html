@@ -1,5 +1,6 @@
 <section>
-    <h2>Prefixes</h2>
+  <h2>Prefixes</h2>
+  <div class="table-responsive">
     <table class="table">
       <thead>
         <tr data-bind="foreach: headers">
@@ -14,11 +15,12 @@
         </tr>
         <!-- /ko -->
         <tr>
-          <td><input data-bind="value: prefix, valueUpdate:'afterkeydown', event: {keypress: addPrefix}" /></td>
-          <td><input data-bind="value: namespace, valueUpdate:'afterkeydown', event: {keypress: addPrefix}" /></td>
+          <td><input class="form-control" data-bind="value: prefix, valueUpdate:'afterkeydown', event: {keypress: addPrefix}" /></td>
+          <td><input class="form-control" data-bind="value: namespace, valueUpdate:'afterkeydown', event: {keypress: addPrefix}" /></td>
         </tr>
       </tbody>
     </table>
+  </div>
 </section>
 
 <p/>
