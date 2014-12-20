@@ -66,9 +66,7 @@ exports.config =
     ]
 
   server:
-    defaultServer:
-      enabled: true
-      onePager: true
+    path: 'server.js'
     views:
       compileWith: 'html'
       extension: 'html'
