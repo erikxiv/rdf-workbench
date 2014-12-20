@@ -1,7 +1,7 @@
 watch = mimosa watch
 build = mimosa build
 
-.PHONY : start startd build build-opt buildo clean pack package dist distribute
+.PHONY : start startd build build-opt buildo clean pack package deploy dist distribute
 
 start:
 	@echo "[x] Building assets and starting development server..."
@@ -42,6 +42,13 @@ dist:
 	rm -Rf dist
 	cp -R public dist
 	cp views/index-optimize.html dist/index.html
+
+deploy: dist
+	@echo "[x] Distributing application to github and heroku..."
+	git add -A
+	git commit -m "Packaged application for distribution"
+	git push origin master
+	git push heroku master
 
 distribute:
 	@echo "[x] Building and distributing application..."
