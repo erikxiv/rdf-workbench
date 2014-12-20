@@ -3,7 +3,7 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
     console.log("testImport start: " + csv);
     // Create a result graph
     var graph = state.store.rdf.createGraph();
-    state.store.rdf.setPrefix(sebFormat.prefix, sebFormat.namespace);
+    state.setPrefix(sebFormat.prefix, sebFormat.namespace);
     var predicates = _.map(sebFormat.columns, function(column) {
       return state.store.rdf.createNamedNode(state.store.rdf.resolve(column.predicate));
     });

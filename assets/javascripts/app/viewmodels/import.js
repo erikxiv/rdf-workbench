@@ -1,6 +1,6 @@
 define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout', 'state'], function (jq1, jq2, rdfstore, _, ko, state) {
   // var store = rdfstore.create();
-  state.store.rdf.setPrefix('ecoi', 'urn:eco:20140101:import:');
+  state.setPrefix('ecoi', 'urn:eco:20140101:import:');
   var sebFormat = {
     prefix: 'seb',
     namespace: 'urn:eco:banks:seb:20140101:',
@@ -18,7 +18,7 @@ define(['bootstrap-tabs', 'jquery-base64', 'rdfstore', 'underscore', 'knockout',
     // console.log("testImport start: " + csv);
     // Create a result graph
     var graph = state.store.rdf.createGraph();
-    state.store.rdf.setPrefix(sebFormat.prefix, sebFormat.namespace);
+    state.setPrefix(sebFormat.prefix, sebFormat.namespace);
     var predicates = _.map(sebFormat.columns, function(column) {
       return state.store.rdf.createNamedNode(state.store.rdf.resolve(column.predicate));
     });
