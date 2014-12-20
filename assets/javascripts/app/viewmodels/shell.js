@@ -13,6 +13,7 @@ define(['plugins/router', 'durandal/app'], function (router, app) {
         { route: 'import', title:'Import', moduleId: 'viewmodels/import', nav: true },
         { route: 'export', title:'Export', moduleId: 'viewmodels/export', nav: true },
         { route: 'sparql', title:'SPARQL', moduleId: 'viewmodels/sparql', nav: true },
+        { route: 'table', title:'Table', moduleId: 'viewmodels/table', nav: true },
         { route: 'list', title:'List', moduleId: 'viewmodels/list', nav: true },
       ]).buildNavigationModel();
       

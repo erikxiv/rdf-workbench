@@ -89,7 +89,7 @@ INSERT DATA\n\
       });
       $('#button_sparql').click(function (e) {
         state.store.execute(
-          $("#textarea_sparql").val(), 
+          state.getPrefixesForSparql() + $("#textarea_sparql").val(), 
                 function(success, graph){
                   if (success) {
                     if (Object.prototype.toString.call(graph) === '[object Array]') {
