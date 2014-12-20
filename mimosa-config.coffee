@@ -79,3 +79,7 @@ exports.config =
         stubModules: ['text']
         pragmas:
           build: true
+
+  lint:
+    rules:
+      multistr: false
