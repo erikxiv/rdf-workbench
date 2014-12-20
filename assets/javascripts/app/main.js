@@ -36,7 +36,7 @@ define(function(require) {
   system.debug(true);
   //>>excludeEnd("build");
 
-  app.title = 'RDF Workbench';
+  app.title = 'Workbench';
 
   app.configurePlugins({
     router:true,
