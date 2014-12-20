@@ -1,13 +1,13 @@
 {
-  "name": "durandal-node-server",
-  "version": "0.0.1",
+  "name": "rdf-workbench",
+  "version": "0.1.0",
   "homepage": "",
-  "author": "",
-  "description": "",
+  "author": "Erik Larsson",
+  "description": "RDF Workbench",
   "contributors": [
     {
-      "name": "",
-      "email": ""
+      "name": "Erik Larsson",
+      "email": "erik.larsson@musiker.nu"
     }
   ],
   "private": true,

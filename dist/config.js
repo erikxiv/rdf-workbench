@@ -16,6 +16,7 @@ var config = {
     "interval": 100,
     "binaryInterval": 300,
     "usePolling": true,
+    "delay": 0,
     "excludeRegex": {},
     "compiledJavascriptDir": [
       "public",
@@ -37,12 +38,14 @@ var config = {
     ],
     "port": 3000,
     "base": "",
+    "packageJSONDir": null,
     "views": {
       "compileWith": "handlebars",
       "extension": "hbs",
       "path": [
         "views"
-      ]
+      ],
+      "options": {}
     }
   }
 }
