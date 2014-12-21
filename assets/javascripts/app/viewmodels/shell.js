@@ -10,6 +10,7 @@ define(['bootstrap', 'plugins/router', 'durandal/app'], function (bootstrap, rou
       router.map([
         { route: '', title:'Import', moduleId: 'viewmodels/import', nav: false },
         { route: 'prefix', title:'Prefixes', moduleId: 'viewmodels/prefix', nav: true },
+        { route: 'type', title:'Types', moduleId: 'viewmodels/type', nav: true },
         { route: 'import', title:'Import', moduleId: 'viewmodels/import', nav: true },
         { route: 'export', title:'Export', moduleId: 'viewmodels/export', nav: true },
         { route: 'sparql', title:'SPARQL', moduleId: 'viewmodels/sparql', nav: true },

@@ -13,10 +13,6 @@
     "forceLatest": true,
     "exclude": [],
     "overridesArrays": {
-      "knockout.js": [
-        "knockout.js",
-        "knockout-2.3.0.debug.js"
-      ],
       "font-awesome": [
         "css/font-awesome.css",
         "css/font-awesome-ie7.css"
@@ -33,10 +29,6 @@
       }
     },
     "mainOverrides": {
-      "knockout.js": [
-        "knockout.js",
-        "knockout-2.3.0.debug.js"
-      ],
       "font-awesome": [
         {
           "font": "../../font"

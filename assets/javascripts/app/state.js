@@ -5,8 +5,8 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
   var _prefixes = ko.observableArray();
   var _defaultPrefix = ko.observable('urn:x-default:');
 
-  // Initialize prefix map
-  _store.rdf.setPrefix('seb', 'urn:eco:banks:seb:20140101:');
+  // Initialize store
+  _store.setBatchLoadEvents(true);
   _store.registerDefaultProfileNamespaces();
   _store.setDefaultPrefix(_defaultPrefix());
   _prefixes($.map(

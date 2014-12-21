@@ -1,5 +1,6 @@
 [
   "assets/javascripts/vendor/requirejs-text/text.js",
+  "assets/javascripts/vendor/requirejs/require.js",
   "assets/images/icon.png",
   "assets/images/ios-startup-image-landscape.png",
   "assets/images/ios-startup-image-portrait.png",
@@ -20,9 +21,6 @@
   "assets/javascripts/vendor/durandal/plugins/widget.js",
   "assets/javascripts/vendor/durandal/transitions/entrance.js",
   "assets/stylesheets/vendor/durandal/durandal.css",
-  "assets/javascripts/vendor/knockout.js/knockout.js",
-  "assets/javascripts/vendor/knockout.js/knockout-2.3.0.debug.js",
-  "assets/javascripts/vendor/requirejs/require.js",
   "assets/stylesheets/vendor/font-awesome/font-awesome.css",
   "assets/stylesheets/vendor/font-awesome/font-awesome-ie7.css",
   "assets/font/FontAwesome.otf",
@@ -30,6 +28,8 @@
   "assets/font/fontawesome-webfont.svg",
   "assets/font/fontawesome-webfont.ttf",
   "assets/font/fontawesome-webfont.woff",
+  "assets/javascripts/vendor/knockoutjs/knockout.js",
+  "assets/javascripts/vendor/knockout.js/knockout.js",
   "assets/javascripts/vendor/underscore/underscore.js",
   "assets/stylesheets/vendor/bootstrap/bootstrap.less",
   "assets/stylesheets/vendor/bootstrap/bootstrap.css",
@@ -37,5 +37,6 @@
   "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.eot",
   "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.svg",
   "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.ttf",
-  "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.woff"
+  "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.woff",
+  "assets/javascripts/vendor/papaparse/papaparse.js"
 ]

@@ -1,0 +1,26 @@
+<section>
+	<h2>List</h2>
+  <div class="table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Amount</th>
+				<th>Category</th>
+			</thead>
+			<tbody data-bind="foreach: verifications">
+				<tr>
+					<td data-bind="text: date.value"></td>
+					<td data-bind="text: description.value"></td>
+					<td data-bind="text: amount.value"></td>
+					<td class="category"><input data-bind="value: category ? category.value : 'Uncategorized'"/>
+						<!--<input class="category" data-bind="text: category.value ? category.value : 'Uncategorized', css: {uncategorized: !category.value, single: category.value && !patternId, pattern: category.value && patternId}"/>-->
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+<p/>
+<footer>&copy; Erik Larsson 2014</footer>

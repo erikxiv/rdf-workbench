@@ -1,0 +1,20 @@
+<section>
+  <h2>Table</h2>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr data-bind="foreach: headers">
+          <th data-bind="text: label"></th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: rows">
+        <tr data-bind="foreach: columns">
+          <td data-bind="text: value"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<p/>
+<footer>&copy; Erik Larsson 2014</footer>

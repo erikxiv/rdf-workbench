@@ -5,6 +5,10 @@
         "deps": [],
         "exports": "rdfstore"
       },
+      "papaparse": {
+        "deps": [],
+        "exports": "Papa"
+      },
       "bootstrap": {
         "deps": [
           "jquery"
@@ -39,7 +43,8 @@
     "/javascripts/app/viewmodels/import.js": [
       "underscore",
       "knockout",
-      "state"
+      "state",
+      "papaparse"
     ],
     "/javascripts/app/viewmodels/list.js": [
       "underscore",
@@ -65,19 +70,25 @@
       "underscore",
       "knockout",
       "state"
+    ],
+    "/javascripts/app/viewmodels/type.js": [
+      "underscore",
+      "knockout",
+      "state"
     ]
   },
   "aliases": {
     "/javascripts/app/main.js": {
       "text": "../vendor/requirejs-text/text",
       "jquery-base64": "../vendor/jquery-base64/jquery.base64",
-      "knockout": "../vendor/knockout.js/knockout",
+      "knockout": "../vendor/knockoutjs/knockout",
       "jquery": "../vendor/jquery/jquery",
       "bootstrap": "../vendor/bootstrap/bootstrap",
       "durandal": "../vendor/durandal",
       "plugins": "../vendor/durandal/plugins",
       "rdfstore": "../vendor/rdfstore/rdf_store_min",
       "underscore": "../vendor/underscore/underscore",
+      "papaparse": "../vendor/papaparse/papaparse",
       "transitions": "../vendor/durandal/transitions"
     }
   },
@@ -92,6 +103,10 @@
       "rdfstore": {
         "deps": [],
         "exports": "rdfstore"
+      },
+      "papaparse": {
+        "deps": [],
+        "exports": "Papa"
       },
       "bootstrap": {
         "deps": [
@@ -109,13 +124,14 @@
     "paths": {
       "text": "../vendor/requirejs-text/text",
       "jquery-base64": "../vendor/jquery-base64/jquery.base64",
-      "knockout": "../vendor/knockout.js/knockout",
+      "knockout": "../vendor/knockoutjs/knockout",
       "jquery": "../vendor/jquery/jquery",
       "bootstrap": "../vendor/bootstrap/bootstrap",
       "durandal": "../vendor/durandal",
       "plugins": "../vendor/durandal/plugins",
       "rdfstore": "../vendor/rdfstore/rdf_store_min",
       "underscore": "../vendor/underscore/underscore",
+      "papaparse": "../vendor/papaparse/papaparse",
       "transitions": "../vendor/durandal/transitions"
     }
   },

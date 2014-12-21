@@ -5,10 +5,11 @@
     "jquery":"1.9.1",
     "requirejs":"2.1.8",
     "requirejs-text":"2.0.3",
-    "knockout.js":"2.3.0",
+    "knockoutjs":"3.2.0",
     "bootstrap":"3.3.1",
     "font-awesome":"3.2.1",
     "underscore":"1.6.0",
-    "durandal":"2.0.0"
+    "durandal":"2.0.0",
+    "papaparse":"4.0.7"
   }
 }
