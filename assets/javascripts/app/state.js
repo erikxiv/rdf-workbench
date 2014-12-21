@@ -4,6 +4,9 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
   var _store = rdfstore.create();
   var _prefixes = ko.observableArray();
   var _defaultPrefix = ko.observable('urn:x-default:');
+  var _statementCount = ko.observable(0);
+  var _classCount = ko.observable(0);
+  var _predicateCount = ko.observable(0);
 
   // Initialize store
   _store.setBatchLoadEvents(true);
@@ -53,7 +56,9 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
     ).join(['']);
   }
 
-  _store.startObservingQuery('SELECT * WHERE { ?s ?p ?o }', function(result) { console.log('Store notification: we now have ' + result.length + ' triples!'); });
+  _store.startObservingQuery('SELECT * WHERE { ?s ?p ?o }', function(result) { _statementCount(result.length); });
+  _store.startObservingQuery('SELECT DISTINCT ?s WHERE { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> }', function(result) { _classCount(result.length); });
+  _store.startObservingQuery('SELECT DISTINCT ?p WHERE { ?s ?p ?o }', function(result) { _predicateCount(result.length); });
 
   // Create state object (singleton)
   var state = {
@@ -64,6 +69,9 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
     resolvePrefix: resolvePrefix,
     removePrefix: removePrefix,
     sortPrefixes: sortPrefixes,
+    statementCount: _statementCount,
+    classCount: _classCount,
+    predicateCount: _predicateCount,
     getPrefixesForSparql: getPrefixesForSparql
   };
 

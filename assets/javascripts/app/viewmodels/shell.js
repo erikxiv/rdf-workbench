@@ -1,6 +1,9 @@
-define(['bootstrap', 'plugins/router', 'durandal/app'], function (bootstrap, router, app) {
+define(['bootstrap', 'plugins/router', 'durandal/app', 'state'], function (bootstrap, router, app, state) {
   return {
     router: router,
+    statementCount: state.statementCount,
+    classCount: state.classCount,
+    predicateCount: state.predicateCount,
     search: function() {
       //It's really easy to show a message box.
       //You can add custom options too. Also, it returns a promise for the user's response.

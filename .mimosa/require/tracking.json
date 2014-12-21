@@ -59,7 +59,8 @@
     "/javascripts/app/viewmodels/shell.js": [
       "bootstrap",
       "plugins/router",
-      "durandal/app"
+      "durandal/app",
+      "state"
     ],
     "/javascripts/app/viewmodels/sparql.js": [
       "underscore",
