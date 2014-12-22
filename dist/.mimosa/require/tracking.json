@@ -70,7 +70,8 @@
     "/javascripts/app/viewmodels/table.js": [
       "underscore",
       "knockout",
-      "state"
+      "state",
+      "typeahead"
     ],
     "/javascripts/app/viewmodels/type.js": [
       "underscore",
@@ -90,6 +91,7 @@
       "rdfstore": "../vendor/rdfstore/rdf_store_min",
       "underscore": "../vendor/underscore/underscore",
       "papaparse": "../vendor/papaparse/papaparse",
+      "typeahead": "../vendor/typeahead.js/typeahead.bundle",
       "transitions": "../vendor/durandal/transitions"
     }
   },
@@ -133,6 +135,7 @@
       "rdfstore": "../vendor/rdfstore/rdf_store_min",
       "underscore": "../vendor/underscore/underscore",
       "papaparse": "../vendor/papaparse/papaparse",
+      "typeahead": "../vendor/typeahead.js/typeahead.bundle",
       "transitions": "../vendor/durandal/transitions"
     }
   },

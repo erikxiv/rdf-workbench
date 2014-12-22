@@ -1,6 +1,5 @@
 [
   "assets/javascripts/vendor/requirejs-text/text.js",
-  "assets/javascripts/vendor/requirejs/require.js",
   "assets/images/icon.png",
   "assets/images/ios-startup-image-landscape.png",
   "assets/images/ios-startup-image-portrait.png",
@@ -21,6 +20,8 @@
   "assets/javascripts/vendor/durandal/plugins/widget.js",
   "assets/javascripts/vendor/durandal/transitions/entrance.js",
   "assets/stylesheets/vendor/durandal/durandal.css",
+  "assets/javascripts/vendor/requirejs/require.js",
+  "assets/javascripts/vendor/papaparse/papaparse.js",
   "assets/stylesheets/vendor/font-awesome/font-awesome.css",
   "assets/stylesheets/vendor/font-awesome/font-awesome-ie7.css",
   "assets/font/FontAwesome.otf",
@@ -38,5 +39,5 @@
   "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.svg",
   "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.ttf",
   "assets/stylesheets/vendor/bootstrap/glyphicons-halflings-regular.woff",
-  "assets/javascripts/vendor/papaparse/papaparse.js"
+  "assets/javascripts/vendor/typeahead.js/typeahead.bundle.js"
 ]
