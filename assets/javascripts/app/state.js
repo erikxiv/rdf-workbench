@@ -57,8 +57,37 @@ define(['knockout', 'underscore', 'rdfstore'], function(ko, _, rdfstore) {
   }
 
   _store.startObservingQuery('SELECT * WHERE { ?s ?p ?o }', function(result) { _statementCount(result.length); });
-  _store.startObservingQuery('SELECT DISTINCT ?s WHERE { ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> }', function(result) { _classes(result); });
-  _store.startObservingQuery('SELECT DISTINCT ?p WHERE { ?s ?p ?o }', function(result) { _predicates(result); });
+  // C rdf:type rdfs:Class
+  // P rdf:type rdf:Property
+  // I rdf:type C
+  // P rdfs:domain C
+  // P rdfs:range C
+  // Observe any class definitions to keep an up-to-date observableArray
+  // Class = { iri: iri, prefixed: prefixed }
+  _store.startObservingQuery('SELECT DISTINCT ?class WHERE { ?class <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> }', function(result) {
+    _classes(_.map(result, function(c) {
+      return {
+        type: '<http://www.w3.org/2000/01/rdf-schema#Class>',
+        iri: c.class.value,
+        prefixed: _store.rdf.prefixes.shrink(c.class.value)
+      };
+    }));
+    console.log("Classes updated:");
+    console.log(_classes());
+  });
+  // Observe any properties to keep an up-to-date observableArray
+  // Property = { iri: iri, prefixed: prefixed }
+  _store.startObservingQuery('SELECT DISTINCT ?p WHERE { ?s ?p ?o }', function(result) {
+    _predicates(_.map(result, function(c) {
+      return {
+        type: '<http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>',
+        iri: c.p.value,
+        prefixed: _store.rdf.prefixes.shrink(c.p.value)
+      };
+    }));
+    console.log("Predicates updated:");
+    console.log(_predicates());
+  });
 
   // Create state object (singleton)
   var state = {
