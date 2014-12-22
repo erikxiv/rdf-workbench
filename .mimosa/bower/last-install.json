@@ -10,6 +10,7 @@
     "font-awesome": "3.2.1",
     "underscore": "1.6.0",
     "durandal": "2.0.0",
-    "papaparse": "4.0.7"
+    "papaparse": "4.0.7",
+    "typeahead.js": "0.10.5"
   }
 }

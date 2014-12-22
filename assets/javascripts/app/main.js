@@ -10,6 +10,7 @@ requirejs.config({
     'rdfstore' : '../vendor/rdfstore/rdf_store_min',
     'underscore' : '../vendor/underscore/underscore',
     'papaparse' : '../vendor/papaparse/papaparse',
+    'typeahead' : '../vendor/typeahead.js/typeahead.bundle',
     'transitions' : '../vendor/durandal/transitions'
   },
   shim: {
