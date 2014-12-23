@@ -74,35 +74,83 @@ define(['underscore', 'knockout', 'state', 'papaparse'], function (_, ko, state,
     return;
   }
 
+  function generateColumnLabel(index) {
+    var result = '';
+    while (index > 26) {
+      result += String.fromCharCode(65 + (index % 26));
+      index = Math.floor(index / 26);
+    }
+    result += String.fromCharCode(65 + index);
+    return result;
+  }
+
   function importData(data) {
     // console.log("importData start: " + data);
     if (_importable()) {
+      // Create a result graph
       var graph = state.store.rdf.createGraph();
       if (_mime() === 'text/csv') {
-        // Create a result graph
-        var importSession = state.store.rdf.createBlankNode();
         console.log('Importing csv [' + _csv.data[0].length + ',' + _csv.data.length + ']...');
+        // Create new Class for this import
+        var unique = new Date().toISOString().replace(/[-:\.]/g,'');
+        var importClass = state.store.rdf.createNamedNode(state.store.rdf.resolve(':'+unique));
+        graph.add(state.store.rdf.createTriple(
+          importClass,
+          state.store.rdf.createNamedNode(state.store.rdf.resolve('rdf:type')),
+          state.store.rdf.createNamedNode(state.store.rdf.resolve('rdfs:Class'))
+        ));
+        graph.add(state.store.rdf.createTriple(
+          importClass,
+          state.store.rdf.createNamedNode(state.store.rdf.resolve('rdfs:label')),
+          state.store.rdf.createLiteral(unique)
+        ));
+        var importProperties = [];
+        _.each(_csv.data[0], function(column, index) {
+          // Create a property for every column
+          var property = state.store.rdf.createNamedNode(state.store.rdf.resolve(':'+unique+'#'+generateColumnLabel(index)));
+          importProperties.push(property);
+          graph.add(state.store.rdf.createTriple(
+            property,
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('rdf:type')),
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('rdf:Property'))
+          ));
+          graph.add(state.store.rdf.createTriple(
+            property,
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('rdfs:domain')),
+            importClass
+          ));
+          graph.add(state.store.rdf.createTriple(
+            property,
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('rdfs:range')),
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('xsd:string'))
+          ));
+          graph.add(state.store.rdf.createTriple(
+            property,
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('rdfs:label')),
+            state.store.rdf.createLiteral(generateColumnLabel(index))
+          ));
+        });
         // Iterate each line
         _.each(_csv.data, function(line, rowIndex) {
           var subject = state.store.rdf.createBlankNode();
           // Add row number statement per line
           graph.add(state.store.rdf.createTriple(
             subject,
-            state.store.rdf.createNamedNode(state.store.rdf.resolve(':line')),
+            state.store.rdf.createNamedNode(state.store.rdf.resolve(':row')),
             state.store.rdf.createLiteral(rowIndex)
           ));
           // Add link to import session
           graph.add(state.store.rdf.createTriple(
             subject,
-            state.store.rdf.createNamedNode(state.store.rdf.resolve(':import')),
-            importSession
+            state.store.rdf.createNamedNode(state.store.rdf.resolve('rdf:type')),
+            importClass
           ));
           // Iterate cells
           _.each(line, function(column, index) {
             // Add cell value as columnN property
             graph.add(state.store.rdf.createTriple(
               subject,
-              state.store.rdf.createNamedNode(state.store.rdf.resolve(':column' + index)),
+              importProperties[index],
               state.store.rdf.createLiteral(column)));
           });
         });
