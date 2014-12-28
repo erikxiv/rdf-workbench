@@ -30,6 +30,12 @@
       "durandal/viewLocator",
       "durandal/system"
     ],
+    "/javascripts/app/rdf.js": [
+      "knockout",
+      "underscore",
+      "rdfstore",
+      "state"
+    ],
     "/javascripts/app/state.js": [
       "knockout",
       "underscore",
@@ -44,7 +50,8 @@
       "underscore",
       "knockout",
       "state",
-      "papaparse"
+      "papaparse",
+      "rdf"
     ],
     "/javascripts/app/viewmodels/list.js": [
       "underscore",
