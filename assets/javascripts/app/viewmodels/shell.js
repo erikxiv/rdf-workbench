@@ -9,6 +9,7 @@ define(['bootstrap', 'plugins/router', 'durandal/app', 'state'], function (boots
       //You can add custom options too. Also, it returns a promise for the user's response.
       app.showMessage('Search not yet implemented...');
     },
+    evaluateRules: state.evaluateRules,
     activate: function () {
       router.map([
         { route: '', title:'Import', moduleId: 'viewmodels/import', nav: false },
