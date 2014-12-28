@@ -22,7 +22,7 @@ define(['bootstrap', 'plugins/router', 'durandal/app', 'state'], function (boots
         { route: 'list', title:'List', moduleId: 'viewmodels/list', nav: true },
       ]).buildNavigationModel();
       
-      return router.activate();
+      return router.activate({pushState: true});
     }
   };
 });

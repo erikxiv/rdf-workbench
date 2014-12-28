@@ -27,7 +27,17 @@ exports.startServer = function(config, callback) {
     app.use(express.errorHandler());
   });
 
-  app.get('/', routes.index(config));
+//  app.get('*', routes.index(config));
+  // Send all other request to SPA (except static resources)
+  app.get('*', function(req, res, next) {
+    if (/javascripts\/.*/.test(req.originalUrl) ||
+        /fonts?\/.*/.test(req.originalUrl) ||
+        /images\/.*/.test(req.originalUrl) ||
+        /stylesheets\/.*/.test(req.originalUrl) ||
+        /^\/socket.io.*/.test(req.originalUrl))
+      return next();
+    return routes.index(config)(req, res, next);
+  });
 
   callback(server);
 };
