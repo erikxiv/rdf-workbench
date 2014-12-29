@@ -18,7 +18,7 @@ define(['bootstrap', 'plugins/router', 'durandal/app', 'state'], function (boots
         { route: 'import', title:'Import', moduleId: 'viewmodels/import', nav: true },
         { route: 'export', title:'Export', moduleId: 'viewmodels/export', nav: true },
         { route: 'sparql', title:'SPARQL', moduleId: 'viewmodels/sparql', nav: true },
-        { route: 'table', title:'Table', moduleId: 'viewmodels/table', nav: true },
+        { route: 'table(/:iri)', title:'Table', moduleId: 'viewmodels/table', hash: 'table', nav: true },
         { route: 'instance(/:iri)', title:'Instance', moduleId: 'viewmodels/instance', nav: false },
       ]).buildNavigationModel();
       

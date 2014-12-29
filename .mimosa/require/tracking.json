@@ -85,7 +85,8 @@
       "underscore",
       "knockout",
       "state",
-      "typeahead"
+      "typeahead",
+      "rquery"
     ],
     "/javascripts/app/viewmodels/type.js": [
       "underscore",

@@ -3,11 +3,12 @@ define(['underscore', 'knockout', 'state', 'rquery'], function (_, ko, state, rq
     displayName: 'Instance',
     iri: ko.observable(''),
     state: state,
-    instance: null,
+    rdf: state.store.rdf,
+    instance: ko.observable(),
     rq: rq,
     activate: function(iri) {
       this.iri(iri);
-      this.instance = rq(iri);
+      this.instance(rq(iri));
     },
     attached: function (view, parent) {
     },

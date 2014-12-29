@@ -1,15 +1,15 @@
 <section>
   <h2>Table</h2>
-  <div id="filter_predicate">
+  <!--<div id="filter_predicate">
     <input class="typeahead form-control" type="text" placeholder="Predicate Filter">
-  </div>
+  </div>-->
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuClass" data-toggle="dropdown" aria-expanded="true">
-      <span data-bind="text: selectedClass().prefixed"></span>
+      <span data-bind="text: instance().pretty()"></span>
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuClass" data-bind="foreach: classes">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: prefixed, click: $parent.changeTableToClass"></a></li>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuClass" data-bind="foreach: classes().reverse('rdf:type')">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="attr: { href: '/table/' + encodeURIComponent(valueOf()) }, text: pretty()"></a></li>
     </ul>
   </div>
   <div class="table-responsive">
@@ -17,16 +17,18 @@
       <thead>
         <tr>
           <th>Subject</th>
-          <!-- ko foreach: headers -->
-          <th data-bind="text: label"></th>
+          <!-- ko foreach: instance().follow('rdf:type').follow('rdfs:subClassOf').reverse('rdfs:domain') -->
+          <th data-bind="text: follow('rdfs:label').pretty()"></th>
           <!-- /ko -->
         </tr>
       </thead>
-      <tbody data-bind="foreach: rows">
+      <tbody data-bind="foreach: instance().reverse('rdf:type')">
         <tr>
-          <td data-bind="text: subject"></td>
-          <!--  ko foreach: columns -->
-          <td data-bind="text: value"></td>
+          <td><a data-bind="attr: { href: '/instance/' + encodeURIComponent(valueOf()) }, text: pretty()"></a></td>
+          <!--  ko foreach: $root.instance().follow('rdf:type').follow('rdfs:subClassOf').reverse('rdfs:domain') -->
+          <td data-bind="foreach: $parent.follow($data)">
+            <span data-bind="text: pretty()"></span><br/>
+          </td>
           <!-- /ko -->
         </tr>
       </tbody>

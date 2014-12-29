@@ -64,6 +64,21 @@ define(['knockout', 'underscore', 'rdfstore', 'state'], function(ko, _, rdfstore
       return "";
     return this.selection[0].valueOf();
   };
+  // Pretty print value
+  RQuery.prototype.pretty = function() {
+    if (this.selection.length === 0)
+      return "";
+    if (typeof this.selection[0] === 'string')
+      return rdf.prefixes.shrink(this.selection[0]);
+    if (this.selection[0].interfaceName === 'NamedNode')
+      return rdf.prefixes.shrink(this.selection[0].nominalValue);
+    if (this.selection[0].interfaceName === 'Literal')
+      return this.selection[0].valueOf();
+    if (this.selection[0].interfaceName === 'BlankNode')
+      return this.selection[0].valueOf();
+    console.log("miss: " + (typeof this.selection[0]) + ' ' + this.selection[0].interfaceName);
+    return this.selection[0].valueOf();
+  };
 
 
   return function(selection, graph) { return new RQuery(selection, graph); };
