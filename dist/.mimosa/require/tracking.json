@@ -36,6 +36,12 @@
       "rdfstore",
       "state"
     ],
+    "/javascripts/app/rquery.js": [
+      "knockout",
+      "underscore",
+      "rdfstore",
+      "state"
+    ],
     "/javascripts/app/state.js": [
       "knockout",
       "underscore",
@@ -53,10 +59,11 @@
       "papaparse",
       "rdf"
     ],
-    "/javascripts/app/viewmodels/list.js": [
+    "/javascripts/app/viewmodels/instance.js": [
       "underscore",
       "knockout",
-      "state"
+      "state",
+      "rquery"
     ],
     "/javascripts/app/viewmodels/prefix.js": [
       "underscore",
@@ -78,7 +85,8 @@
       "underscore",
       "knockout",
       "state",
-      "typeahead"
+      "typeahead",
+      "rquery"
     ],
     "/javascripts/app/viewmodels/type.js": [
       "underscore",
