@@ -1,0 +1,18 @@
+<section>
+	<h2 data-bind="text:instance.follow('rdfs:label').valueOf()"></h2>
+  <!-- Get the list of classes this instance belongs to -->
+  <!-- ko foreach: instance.follow('rdf:type') -->
+  <div>
+    <h3 data-bind="text:follow('rdfs:label').valueOf()"></h3>
+    <!-- ko foreach: reverse('rdfs:domain') -->
+    <h4 data-bind="text:follow('rdfs:label').valueOf()"></h4>
+    <!-- ko foreach: $root.instance.follow($data) -->
+    <span data-bind="text:valueOf()"></span><br/>
+    <!-- /ko -->      
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+</section>
+
+<p/>
+<footer>&copy; Erik Larsson 2014</footer>

@@ -67,7 +67,7 @@ define(['underscore', 'knockout', 'state', 'typeahead'], function (_, ko, state,
       // Get properties of class, update headers, update query and refresh table
       // get label and predicate
       console.log("Getting properties...");
-      var sparql = 'SELECT ?label ?predicate WHERE { ?predicate <http://www.w3.org/2000/01/rdf-schema#domain> <' + prefixedClass.iri + '> ; <http://www.w3.org/2000/01/rdf-schema#label> ?label . }';
+      var sparql = 'SELECT DISTINCT ?label ?predicate WHERE {{ ?predicate <http://www.w3.org/2000/01/rdf-schema#domain> <' + prefixedClass.iri + '> ; <http://www.w3.org/2000/01/rdf-schema#label> ?label . } union { ?predicate <http://www.w3.org/2000/01/rdf-schema#domain> ?superclass; <http://www.w3.org/2000/01/rdf-schema#label> ?label . <' + prefixedClass.iri + '> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?superclass }}';
       console.log(sparql);
       state.store.execute(sparql, function(success, graph) {
         console.log(graph);
